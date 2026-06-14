@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-900 text-slate-400 antialiased selection:bg-teal-300/30 selection:text-teal-300;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --tardis-speed: 150ms;
+}
+.tardis-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 35%, rgba(51, 68, 85, 0.9), rgba(0, 0, 0, 0.95));
+  backdrop-filter: blur(4px);
+}
+.tardis-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.tardis-layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(var(--x, -50%), var(--y, -50%)) rotate(0deg);
+  width: 60vmin;
+  height: 60vmin;
+  max-width: 600px;
+  max-height: 600px;
+  border-radius: 90% 95% 85% 105%;
+  background: #0f0;
+  mix-blend-mode: screen;
+  animation: tardis-wobble calc(var(--tardis-speed) * var(--t)) linear infinite;
+  transform-origin: calc(var(--x) * -1) calc(var(--y) * -1);
+  box-shadow: 0 0 5em 2em #000 inset, 0 0 1.5em 0 #fff;
+}
+.tardis-layer:nth-child(1) { --x: -53%; --y: -53%; --t: 37; }
+.tardis-layer:nth-child(2) { --x: -47%; --y: -52%; --t: 58; }
+.tardis-layer:nth-child(3) { --x: -45%; --y: -50%; --t: 46; }
+.tardis-layer:nth-child(4) { --x: -53%; --y: -45%; --t: 72; }
+.tardis-layer:nth-child(5) { --x: -55%; --y: -45%; --t: 62; }
+
+@keyframes tardis-wobble {
+  to {
+    filter: hue-rotate(360deg);
+    transform: translate(var(--x), var(--y)) rotate(360deg);
+  }
+}
+
+/* Custom Scrollbar for a Premium Dark Mode Feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a; /* Tailwind slate-900 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155; /* Tailwind slate-700 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569; /* Tailwind slate-600 */
+}
