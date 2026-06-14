@@ -5,25 +5,25 @@ export default function ContactPage() {
     <div className="flex flex-col items-center justify-center h-screen bg-cBg font-oldStandardTT">
       <h1 className="markdown-h1 mb-8">Contact</h1>
       <div className="text-cBody max-w-md px-4 text-left">
-        <p>
-          <a href="mailto:t.rowland711@gmail.com" className="block text-cLink hover:text-cLinkHover hover:underline hover:font-bold">Email: t.rowland711@gmail.com</a>
+        <div className="space-y-4">
+          <a href="mailto:hello@irwanto.dev" className="block text-cLink hover:text-cLinkHover hover:underline hover:font-bold">Email: Contact Me</a>
           <a
-            href="https://www.linkedin.com/in/trevor-rowland711/"
+            href="https://www.linkedin.com/in/irwandev"
             target="_blank"
             rel="noopener noreferrer"
             className="block text-cLink hover:text-cLinkHover hover:underline hover:font-bold"
           >
-            LinkedIn: Trevor Rowland
+            LinkedIn: Irwanto
           </a>
           <a
-            href="https://github.com/dBCooper2"
+            href="https://github.com/irwan-dev-sys"
             target="_blank"
             rel="noopener noreferrer"
             className="block text-cLink hover:text-cLinkHover hover:underline hover:font-bold"
           >
-            GitHub: dBCooper2
+            GitHub: irwan-dev-sys
           </a>
-        </p>
+        </div>
       </div>
     </div>
   );

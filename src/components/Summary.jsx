@@ -27,7 +27,7 @@ export default async function Summary() {
       </div>
       <div className="px-2 mt-8 flex flex-wrap justify-center md:justify-start gap-4 text-xl font-bold">
         <a
-          href="https://www.linkedin.com/in/trevor-rowland711/"
+          href="https://www.linkedin.com/in/irwandev"
           target="_blank"
           rel="noopener noreferrer"
           className="text-cLink hover:text-cLinkVisited hover:underline"
